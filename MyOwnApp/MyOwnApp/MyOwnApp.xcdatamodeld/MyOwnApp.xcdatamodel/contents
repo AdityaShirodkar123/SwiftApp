@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G8022" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Dates" representedClassName="Dates" syncable="YES" codeGenerationType="class">
+        <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="month" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="FoodsEaten" representedClassName="FoodsEaten" syncable="YES">
+        <attribute name="calories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="food" optional="YES" attributeType="String"/>
+        <relationship name="insideMeal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MealsEaten" inverseName="foodInside" inverseEntity="MealsEaten"/>
+    </entity>
+    <entity name="MealsEaten" representedClassName="MealsEaten" syncable="YES">
+        <attribute name="mealName" optional="YES" attributeType="String"/>
+        <relationship name="foodInside" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodsEaten" inverseName="insideMeal" inverseEntity="FoodsEaten"/>
+    </entity>
+    <elements>
+        <element name="Dates" positionX="-36" positionY="18" width="128" height="88"/>
+        <element name="FoodsEaten" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="MealsEaten" positionX="-54" positionY="0" width="128" height="73"/>
+    </elements>
+</model>
